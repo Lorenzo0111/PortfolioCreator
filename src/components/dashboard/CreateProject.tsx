@@ -14,7 +14,7 @@ import {
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-export default function CreatePortfolio() {
+export default function CreateProject({ portfolio }: { portfolio: string }) {
   const router = useRouter();
 
   return (
@@ -22,14 +22,14 @@ export default function CreatePortfolio() {
       <DialogTrigger asChild>
         <Button>
           <Plus />
-          Create
+          Add
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Create portfolio</DialogTitle>
+          <DialogTitle>Add project</DialogTitle>
           <DialogDescription>
-            Create your next amazing portfolio here
+            Add a new project to your collection
           </DialogDescription>
         </DialogHeader>
         <form
@@ -38,10 +38,17 @@ export default function CreatePortfolio() {
 
             const data = new FormData(e.target as HTMLFormElement);
             const title = data.get("title") as string;
+            const description = data.get("description") as string;
+            const url = data.get("url") as string;
             const slug = (data.get("slug") as string).toLowerCase();
 
             axios
-              .post("/api/portfolio/create", { title, slug })
+              .put(`/api/portfolio/${portfolio}/projects`, {
+                title,
+                description,
+                url,
+                slug,
+              })
               .then(() => {
                 router.refresh();
               })
@@ -55,6 +62,24 @@ export default function CreatePortfolio() {
               <Label htmlFor="title">Title</Label>
               <Input id="title" name="title" placeholder="Example" />
             </div>
+            <div>
+              <Label htmlFor="description">Description</Label>
+              <Input
+                id="description"
+                name="description"
+                placeholder="An example project"
+              />
+            </div>
+            <div>
+              <Label htmlFor="url">URL</Label>
+              <Input
+                id="url"
+                name="url"
+                type="url"
+                placeholder="https://example.com"
+              />
+            </div>
+
             <div>
               <Label htmlFor="slug">Slug</Label>
               <Input

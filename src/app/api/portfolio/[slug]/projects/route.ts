@@ -8,8 +8,7 @@ const createSchema = z.object({
   description: z.string(),
   url: z.string().optional(),
   imageUrl: z.string().optional(),
-  order: z.number().optional(),
-  slug: z.string(),
+  slug: z.string().toLowerCase(),
 });
 
 export const PUT = auth(async (req, { params }) => {
@@ -41,25 +40,10 @@ export const PUT = auth(async (req, { params }) => {
     const project = await prisma.project.create({
       data: {
         ...data.data,
-        order: data.data.order || projects + 1,
+        order: projects + 1,
         portfolio: { connect: { slug: params.slug } },
       },
     });
-
-    if (data.data.order) {
-      await prisma.project.updateMany({
-        where: {
-          portfolio: { slug: params.slug },
-          order: { gte: data.data.order },
-          id: { not: project.id },
-        },
-        data: {
-          order: {
-            increment: 1,
-          },
-        },
-      });
-    }
 
     return NextResponse.json(project);
   } catch (_) {
