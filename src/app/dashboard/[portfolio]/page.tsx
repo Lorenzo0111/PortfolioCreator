@@ -1,7 +1,7 @@
 "use client";
 
-import CreateProject from "@/components/dashboard/CreateProject";
 import Project from "@/components/dashboard/Project";
+import UpsertProject from "@/components/dashboard/UpsertProject";
 import { useFetcher } from "@/components/fetcher";
 import {
   closestCenter,
@@ -69,7 +69,7 @@ export default function PortfolioDashboard({
     <div className="flex flex-col gap-3 p-8">
       <div className="flex justify-between w-full items-center">
         <h1 className="text-2xl font-extrabold">{data?.title}</h1>
-        <CreateProject portfolio={params.portfolio} />
+        <UpsertProject portfolio={params.portfolio} />
       </div>
       <div className="flex gap-3 flex-wrap">
         <DndContext

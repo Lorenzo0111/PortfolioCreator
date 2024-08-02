@@ -1,5 +1,6 @@
+import type { Project } from "@prisma/client";
 import axios from "axios";
-import { Plus } from "lucide-react";
+import { Pencil, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import {
@@ -14,22 +15,30 @@ import {
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-export default function CreateProject({ portfolio }: { portfolio: string }) {
+export default function UpsertProject({
+  portfolio,
+  project,
+}: {
+  portfolio: string;
+  project?: Project;
+}) {
   const router = useRouter();
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button>
-          <Plus />
-          Add
+          {project ? <Pencil /> : <Plus />}
+          {project ? "Edit" : "Add"}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Add project</DialogTitle>
+          <DialogTitle>{project ? "Edit" : "Add"} project</DialogTitle>
           <DialogDescription>
-            Add a new project to your collection
+            {project
+              ? "Update your project details"
+              : "Add a new project to your collection"}
           </DialogDescription>
         </DialogHeader>
         <form
@@ -42,13 +51,20 @@ export default function CreateProject({ portfolio }: { portfolio: string }) {
             const url = data.get("url") as string;
             const slug = (data.get("slug") as string).toLowerCase();
 
-            axios
-              .put(`/api/portfolio/${portfolio}/projects`, {
-                title,
-                description,
-                url,
-                slug,
-              })
+            axios(
+              `/api/portfolio/${portfolio}/projects${
+                project ? `/${project.slug}` : ""
+              }`,
+              {
+                method: project ? "PATCH" : "PUT",
+                data: {
+                  title,
+                  description,
+                  url,
+                  slug,
+                },
+              }
+            )
               .then(() => {
                 router.refresh();
               })
@@ -60,7 +76,12 @@ export default function CreateProject({ portfolio }: { portfolio: string }) {
           <div className="flex flex-col gap-3">
             <div>
               <Label htmlFor="title">Title</Label>
-              <Input id="title" name="title" placeholder="Example" />
+              <Input
+                id="title"
+                name="title"
+                placeholder="Example"
+                defaultValue={project?.title}
+              />
             </div>
             <div>
               <Label htmlFor="description">Description</Label>
@@ -68,6 +89,7 @@ export default function CreateProject({ portfolio }: { portfolio: string }) {
                 id="description"
                 name="description"
                 placeholder="An example project"
+                defaultValue={project?.description}
               />
             </div>
             <div>
@@ -77,6 +99,7 @@ export default function CreateProject({ portfolio }: { portfolio: string }) {
                 name="url"
                 type="url"
                 placeholder="https://example.com"
+                defaultValue={project?.url ?? ""}
               />
             </div>
 
@@ -87,12 +110,13 @@ export default function CreateProject({ portfolio }: { portfolio: string }) {
                 name="slug"
                 placeholder="example"
                 className="lowercase"
+                defaultValue={project?.slug}
               />
             </div>
           </div>
           <DialogFooter>
             <Button className="mt-3" type="submit">
-              Create
+              Submit
             </Button>
           </DialogFooter>
         </form>

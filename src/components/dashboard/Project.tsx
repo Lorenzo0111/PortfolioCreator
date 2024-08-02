@@ -33,7 +33,7 @@ export default function Project({ project }: { project: Project }) {
         <CardDescription>{project.description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Button className="w-full">
+        <Button className="w-full" asChild>
           <Link href={`/dashboard/${project.portfolioSlug}/${project.slug}`}>
             Edit
           </Link>

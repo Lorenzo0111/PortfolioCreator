@@ -1,9 +1,11 @@
 "use client";
 
+import UpsertProject from "@/components/dashboard/UpsertProject";
 import { useFetcher } from "@/components/fetcher";
 import { Button } from "@/components/ui/button";
 import type { Portfolio, Project } from "@prisma/client";
 import axios from "axios";
+import { Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -33,20 +35,24 @@ export default function ProjectDashboard({
           {data?.title} - {projectData?.title}
         </h1>
 
-        <Button
-          variant="destructive"
-          onClick={() => {
-            axios
-              .delete(
-                `/api/portfolio/${params.portfolio}/projects/${params.project}`
-              )
-              .then(() => {
-                router.push(`/dashboard/${params.portfolio}`);
-              });
-          }}
-        >
-          Delete
-        </Button>
+        <div className="flex gap-3">
+          <UpsertProject portfolio={params.portfolio} project={projectData} />
+          <Button
+            variant="destructive"
+            onClick={() => {
+              axios
+                .delete(
+                  `/api/portfolio/${params.portfolio}/projects/${params.project}`
+                )
+                .then(() => {
+                  router.push(`/dashboard/${params.portfolio}`);
+                });
+            }}
+          >
+            <Trash />
+            Delete
+          </Button>
+        </div>
       </div>
       <p>{projectData?.description}</p>
       {projectData?.url && (
