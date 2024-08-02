@@ -12,7 +12,7 @@ const createSchema = z.object({
 });
 
 export const PUT = auth(async (req, { params }) => {
-  if (!params?.slug || typeof params.slug !== "string")
+  if (!params?.portfolio || typeof params.portfolio !== "string")
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
 
   if (!req.auth?.user)
@@ -33,7 +33,7 @@ export const PUT = auth(async (req, { params }) => {
   try {
     const projects = await prisma.project.count({
       where: {
-        portfolio: { slug: params.slug },
+        portfolio: { slug: params.portfolio },
       },
     });
 
@@ -41,7 +41,7 @@ export const PUT = auth(async (req, { params }) => {
       data: {
         ...data.data,
         order: projects + 1,
-        portfolio: { connect: { slug: params.slug } },
+        portfolio: { connect: { slug: params.portfolio } },
       },
     });
 
