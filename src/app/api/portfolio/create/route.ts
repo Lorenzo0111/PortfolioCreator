@@ -5,7 +5,7 @@ import { z } from "zod";
 
 const schema = z.object({
   title: z.string(),
-  slug: z.string(),
+  slug: z.string().toLowerCase(),
 });
 
 export const POST = auth(async (req) => {

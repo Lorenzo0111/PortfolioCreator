@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -13,8 +12,6 @@ export const metadata: Metadata = {
   title: "PortfolioCreator",
   description: "Create your own portfolio with no code",
 };
-
-const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -29,9 +26,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        {children}
       </body>
     </html>
   );

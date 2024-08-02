@@ -7,7 +7,7 @@ export default async function Home() {
   if (session) return redirect("/dashboard");
 
   return (
-    <main className="flex min-h-screen w-full justify-center items-center flex-col p-24">
+    <main className="flex min-h-screen w-full justify-center items-center flex-col p-8">
       <Login />
     </main>
   );

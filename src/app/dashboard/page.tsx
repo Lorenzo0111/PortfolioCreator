@@ -1,31 +1,32 @@
 "use client";
 
+import CreatePortfolio from "@/components/dashboard/CreatePortfolio";
+import { useFetcher } from "@/components/fetcher";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Portfolio } from "@prisma/client";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import Link from "next/link";
 
 export default function Dashboard() {
-  const { data, isLoading } = useQuery({
-    queryKey: ["portfolio"],
-    queryFn: () =>
-      axios.get<Portfolio[]>("/api/portfolio/list").then((res) => res.data),
-  });
-
+  const { data, isLoading } = useFetcher<Portfolio[]>("/api/portfolio/list");
   if (isLoading) return null;
 
   return (
-    <div>
-      {data?.map((portfolio) => (
-        <Link href={`/dashboard/${portfolio.slug}`} key={portfolio.slug}>
-          <Card className="w-[350px]">
-            <CardHeader>
-              <CardTitle>{portfolio.title}</CardTitle>
-            </CardHeader>
-          </Card>
-        </Link>
-      ))}
+    <div className="flex flex-col gap-3 p-8">
+      <div className="flex justify-between w-full items-center">
+        <h1 className="text-2xl font-extrabold">Dashboard</h1>
+        <CreatePortfolio />
+      </div>
+      <div className="flex gap-3 flex-wrap">
+        {data?.map((portfolio) => (
+          <Link href={`/dashboard/${portfolio.slug}`} key={portfolio.slug}>
+            <Card className="w-[350px]">
+              <CardHeader>
+                <CardTitle>{portfolio.title}</CardTitle>
+              </CardHeader>
+            </Card>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
