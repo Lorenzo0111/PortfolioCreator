@@ -11,7 +11,11 @@ export const GET = auth(async (req, { params }) => {
       slug: params.portfolio,
     },
     include: {
-      projects: true,
+      projects: {
+        orderBy: {
+          order: "asc",
+        },
+      },
     },
   });
 
