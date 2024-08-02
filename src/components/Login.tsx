@@ -1,14 +1,16 @@
-"use client";
-
-import { signIn } from "next-auth/react";
+import { signIn } from "@/lib/auth";
+import { Button } from "./ui/button";
 
 export default function Login() {
   return (
-    <button
-      onClick={() => signIn("github")}
-      className="bg-green-500 rounded-lg p-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    <form
+      action={async () => {
+        "use server";
+
+        await signIn("github");
+      }}
     >
-      Login
-    </button>
+      <Button type="submit">Login</Button>
+    </form>
   );
 }

@@ -1,0 +1,24 @@
+model Portfolio {
+    slug   String  @id
+    title  String
+    domain String?
+
+    userId   String
+    user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    projects Project[]
+}
+
+model Project {
+    id          String  @id @default(cuid())
+    title       String
+    description String
+    url         String?
+    imageUrl    String?
+    order       Int
+    slug        String
+
+    portfolioSlug String
+    portfolio     Portfolio @relation(fields: [portfolioSlug], references: [slug], onDelete: Cascade)
+
+    @@unique([portfolioSlug, slug])
+}
