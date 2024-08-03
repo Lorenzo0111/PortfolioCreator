@@ -3,9 +3,10 @@ import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-const schema = z.object({
+export const upsertSchema = z.object({
   title: z.string(),
   slug: z.string().toLowerCase(),
+  domain: z.string().optional(),
 });
 
 export const POST = auth(async (req) => {
@@ -13,7 +14,7 @@ export const POST = auth(async (req) => {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await req.json();
-  const data = schema.safeParse(body);
+  const data = upsertSchema.safeParse(body);
 
   if (!data.success) {
     return NextResponse.json(

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Plus } from "lucide-react";
+import { Pencil, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import {
@@ -13,23 +13,30 @@ import {
 } from "../ui/dialog";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import type { Portfolio } from "@prisma/client";
 
-export default function CreatePortfolio() {
+export default function UpsertPortfolio({
+  portfolio,
+}: {
+  portfolio?: Portfolio;
+}) {
   const router = useRouter();
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button>
-          <Plus />
-          Create
+          {portfolio ? <Pencil /> : <Plus />}
+          {portfolio ? "Edit" : "Add"}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Create portfolio</DialogTitle>
+          <DialogTitle>{portfolio ? "Edit" : "Add"} portfolio</DialogTitle>
           <DialogDescription>
-            Create your next amazing portfolio here
+            {portfolio
+              ? "Update your portfolio details"
+              : "Create your next amazing portfolio"}
           </DialogDescription>
         </DialogHeader>
         <form
@@ -39,9 +46,14 @@ export default function CreatePortfolio() {
             const data = new FormData(e.target as HTMLFormElement);
             const title = data.get("title") as string;
             const slug = (data.get("slug") as string).toLowerCase();
+            const domain = data.has("domain")
+              ? (data.get("domain") as string).toLowerCase()
+              : undefined;
 
-            axios
-              .post("/api/portfolio/create", { title, slug })
+            axios(`/api/portfolio/${portfolio?.slug || "create"}`, {
+              method: portfolio ? "PATCH" : "POST",
+              data: { title, slug, domain },
+            })
               .then(() => {
                 router.refresh();
               })
@@ -53,7 +65,12 @@ export default function CreatePortfolio() {
           <div className="flex flex-col gap-3">
             <div>
               <Label htmlFor="title">Title</Label>
-              <Input id="title" name="title" placeholder="Example" />
+              <Input
+                id="title"
+                name="title"
+                placeholder="Example"
+                defaultValue={portfolio?.title}
+              />
             </div>
             <div>
               <Label htmlFor="slug">Slug</Label>
@@ -62,12 +79,25 @@ export default function CreatePortfolio() {
                 name="slug"
                 placeholder="example"
                 className="lowercase"
+                defaultValue={portfolio?.slug}
               />
             </div>
+            {portfolio && (
+              <div>
+                <Label htmlFor="domain">Domain</Label>
+                <Input
+                  id="domain"
+                  name="domain"
+                  placeholder="example.com"
+                  className="lowercase"
+                  defaultValue={portfolio.domain ?? ""}
+                />
+              </div>
+            )}
           </div>
           <DialogFooter>
             <Button className="mt-3" type="submit">
-              Create
+              Submit
             </Button>
           </DialogFooter>
         </form>

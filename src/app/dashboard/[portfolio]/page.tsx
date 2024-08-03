@@ -1,6 +1,7 @@
 "use client";
 
 import Project from "@/components/dashboard/Project";
+import UpsertPortfolio from "@/components/dashboard/UpsertPortfolio";
 import UpsertProject from "@/components/dashboard/UpsertProject";
 import { useFetcher } from "@/components/fetcher";
 import {
@@ -69,7 +70,10 @@ export default function PortfolioDashboard({
     <div className="flex flex-col gap-3 p-8">
       <div className="flex justify-between w-full items-center">
         <h1 className="text-2xl font-extrabold">{data?.title}</h1>
-        <UpsertProject portfolio={params.portfolio} />
+        <div className="flex gap-3">
+          <UpsertPortfolio portfolio={data} />
+          <UpsertProject portfolio={params.portfolio} />
+        </div>
       </div>
       <div className="flex gap-3 flex-wrap">
         <DndContext

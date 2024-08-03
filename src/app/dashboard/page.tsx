@@ -1,6 +1,6 @@
 "use client";
 
-import CreatePortfolio from "@/components/dashboard/CreatePortfolio";
+import UpsertPortfolio from "@/components/dashboard/UpsertPortfolio";
 import { useFetcher } from "@/components/fetcher";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Portfolio } from "@prisma/client";
@@ -14,7 +14,7 @@ export default function Dashboard() {
     <div className="flex flex-col gap-3 p-8">
       <div className="flex justify-between w-full items-center">
         <h1 className="text-2xl font-extrabold">Dashboard</h1>
-        <CreatePortfolio />
+        <UpsertPortfolio />
       </div>
       <div className="flex gap-3 flex-wrap">
         {data?.map((portfolio) => (

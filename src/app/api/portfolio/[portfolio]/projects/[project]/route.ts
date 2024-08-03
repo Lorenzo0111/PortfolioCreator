@@ -88,12 +88,16 @@ export const PATCH = auth(async (req, { params }) => {
     );
   }
 
-  await prisma.project.update({
-    where: {
-      id: project.id,
-    },
-    data: data.data,
-  });
+  try {
+    await prisma.project.update({
+      where: {
+        id: project.id,
+      },
+      data: data.data,
+    });
 
-  return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true });
+  } catch (_) {
+    return NextResponse.json({ error: "Slug already in use" }, { status: 400 });
+  }
 });
