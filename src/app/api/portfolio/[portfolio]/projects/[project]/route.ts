@@ -12,6 +12,8 @@ export const GET = auth(async (req, { params }) => {
   )
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
 
+  const query = req.nextUrl.searchParams;
+
   const project = await prisma.project.findUnique({
     where: {
       portfolioSlug_slug: {
@@ -20,6 +22,19 @@ export const GET = auth(async (req, { params }) => {
       },
     },
   });
+
+  if (project && query.has("view")) {
+    await prisma.project.update({
+      where: {
+        id: project.id,
+      },
+      data: {
+        views: {
+          increment: 1,
+        },
+      },
+    });
+  }
 
   return NextResponse.json(project);
 });

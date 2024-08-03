@@ -3,6 +3,8 @@ model Portfolio {
     title  String
     domain String?
 
+    views Int @default(0)
+
     userId   String
     user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
     projects Project[]
@@ -16,6 +18,8 @@ model Project {
     imageUrl    String?
     order       Int
     slug        String
+
+    views Int @default(0)
 
     portfolioSlug String
     portfolio     Portfolio @relation(fields: [portfolioSlug], references: [slug], onDelete: Cascade)

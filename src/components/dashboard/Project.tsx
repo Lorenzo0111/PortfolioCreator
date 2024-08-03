@@ -30,7 +30,14 @@ export default function Project({ project }: { project: Project }) {
     >
       <CardHeader>
         <CardTitle>{project.title}</CardTitle>
-        <CardDescription>{project.description}</CardDescription>
+        <CardDescription>
+          <div>
+            <p>{project.description}</p>
+            <p>
+              <span className="font-bold">{project.views}</span> views
+            </p>
+          </div>
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Button className="w-full" asChild>

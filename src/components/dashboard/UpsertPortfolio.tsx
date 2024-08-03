@@ -1,6 +1,6 @@
+import type { Portfolio } from "@prisma/client";
 import axios from "axios";
 import { Pencil, Plus } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -13,15 +13,12 @@ import {
 } from "../ui/dialog";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import type { Portfolio } from "@prisma/client";
 
 export default function UpsertPortfolio({
   portfolio,
 }: {
   portfolio?: Portfolio;
 }) {
-  const router = useRouter();
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -55,7 +52,7 @@ export default function UpsertPortfolio({
               data: { title, slug, domain },
             })
               .then(() => {
-                router.refresh();
+                window.location.reload();
               })
               .catch((error) => {
                 alert(error.response.data.error);

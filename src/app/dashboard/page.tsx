@@ -2,7 +2,12 @@
 
 import UpsertPortfolio from "@/components/dashboard/UpsertPortfolio";
 import { useFetcher } from "@/components/fetcher";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import type { Portfolio } from "@prisma/client";
 import Link from "next/link";
 
@@ -22,6 +27,9 @@ export default function Dashboard() {
             <Card className="w-[350px]">
               <CardHeader>
                 <CardTitle>{portfolio.title}</CardTitle>
+                <CardDescription>
+                  <span className="font-bold">{portfolio.views}</span> views
+                </CardDescription>
               </CardHeader>
             </Card>
           </Link>

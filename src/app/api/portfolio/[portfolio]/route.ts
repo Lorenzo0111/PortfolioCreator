@@ -7,6 +7,8 @@ export const GET = auth(async (req, { params }) => {
   if (!params?.portfolio || typeof params.portfolio !== "string")
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
 
+  const query = req.nextUrl.searchParams;
+
   const portfolio = await prisma.portfolio.findUnique({
     where: {
       slug: params.portfolio,
@@ -19,6 +21,19 @@ export const GET = auth(async (req, { params }) => {
       },
     },
   });
+
+  if (portfolio && query.has("view")) {
+    await prisma.portfolio.update({
+      where: {
+        slug: portfolio.slug,
+      },
+      data: {
+        views: {
+          increment: 1,
+        },
+      },
+    });
+  }
 
   return NextResponse.json(portfolio);
 });
