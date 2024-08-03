@@ -23,7 +23,7 @@ export default function UpsertProject({
   portfolio: string;
   project?: Project;
 }) {
-  const [image, setImage] = useState<string>();
+  const [imageUrl, setImageUrl] = useState<string>();
 
   return (
     <Dialog>
@@ -63,6 +63,7 @@ export default function UpsertProject({
                   description,
                   url,
                   slug,
+                  imageUrl
                 },
               }
             )
@@ -125,7 +126,7 @@ export default function UpsertProject({
             }}
             endpoint="imageUploader"
             onClientUploadComplete={(res) => {
-              setImage(res[0].url);
+              setImageUrl(res[0].url);
             }}
           />
 

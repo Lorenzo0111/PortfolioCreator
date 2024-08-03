@@ -5,7 +5,7 @@ import Project from "@/components/view/Project";
 import type { Portfolio, Project as ProjectType } from "@prisma/client";
 import { notFound } from "next/navigation";
 
-export default function ViewPortfolio({
+export default function PortfolioView({
   params,
 }: {
   params: { portfolio: string };
