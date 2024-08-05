@@ -7,7 +7,7 @@ export default async function Navbar() {
   const session = await auth();
 
   return (
-    <nav className="w-full flex justify-between items-center p-2 px-4 rounded-lg border">
+    <nav className="w-full flex justify-between items-center p-2 px-4">
       <h3 className="font-bold text-xl">Portfolio Creator</h3>
       {session?.user ? (
         <Button asChild>
