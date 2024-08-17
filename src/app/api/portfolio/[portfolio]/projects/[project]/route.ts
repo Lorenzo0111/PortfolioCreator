@@ -1,7 +1,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { upsertSchema } from "../route";
+import { upsertSchema } from "../";
 
 export const GET = auth(async (req, { params }) => {
   if (

@@ -1,13 +1,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { z } from "zod";
-
-export const upsertSchema = z.object({
-  title: z.string(),
-  slug: z.string().toLowerCase(),
-  domain: z.string().optional(),
-});
+import { upsertSchema } from ".";
 
 export const POST = auth(async (req) => {
   if (!req.auth?.user)

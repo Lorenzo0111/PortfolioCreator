@@ -1,15 +1,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { z } from "zod";
-
-export const upsertSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  url: z.string().optional(),
-  imageUrl: z.string().optional(),
-  slug: z.string().toLowerCase(),
-});
+import { upsertSchema } from ".";
 
 export const PUT = auth(async (req, { params }) => {
   if (!params?.portfolio || typeof params.portfolio !== "string")

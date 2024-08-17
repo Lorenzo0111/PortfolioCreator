@@ -1,7 +1,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { upsertSchema } from "../create/route";
+import { upsertSchema } from "../create";
 
 export const GET = auth(async (req, { params }) => {
   if (!params?.portfolio || typeof params.portfolio !== "string")

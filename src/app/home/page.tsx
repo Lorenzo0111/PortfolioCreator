@@ -1,4 +1,4 @@
-import Home from "../page";
+import Home from "@/components/home/Home";
 
 export default function HomePage() {
   return <Home skipAuth />;

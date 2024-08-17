@@ -10,7 +10,7 @@
 
 ## What is PortfolioCreator
 
-HotelApp is a website that allows you to create a portfolio for your projects, it's simple and easy to use.
+PortfolioCreator is a website that allows you to create a portfolio for your projects, it's simple and easy to use.
 
 ## Deploying
 

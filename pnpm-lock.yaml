@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@auth/prisma-adapter':
         specifier: ^2.4.2
-        version: 2.4.2(@prisma/client@5.17.0(prisma@5.17.0))
+        version: 2.4.2(@prisma/client@5.18.0(prisma@5.18.0))
       '@dnd-kit/core':
         specifier: ^6.1.0
         version: 6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -21,8 +21,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(react@18.3.1)
       '@prisma/client':
-        specifier: ^5.17.0
-        version: 5.17.0(prisma@5.17.0)
+        specifier: ^5.18.0
+        version: 5.18.0(prisma@5.18.0)
       '@radix-ui/react-dialog':
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -34,10 +34,10 @@ importers:
         version: 1.1.0(@types/react@18.3.3)(react@18.3.1)
       '@uploadthing/react':
         specifier: ^6.7.2
-        version: 6.7.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.7))
+        version: 6.7.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.10))
       axios:
-        specifier: ^1.7.3
-        version: 1.7.3
+        specifier: ^1.7.4
+        version: 1.7.4
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -45,8 +45,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       lucide-react:
-        specifier: ^0.424.0
-        version: 0.424.0(react@18.3.1)
+        specifier: ^0.428.0
+        version: 0.428.0(react@18.3.1)
       next:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -63,14 +63,14 @@ importers:
         specifier: ^2.2.5
         version: 2.2.5(react@18.3.1)
       tailwind-merge:
-        specifier: ^2.4.0
-        version: 2.4.0
+        specifier: ^2.5.2
+        version: 2.5.2
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.7)
+        version: 1.0.7(tailwindcss@3.4.10)
       uploadthing:
         specifier: ^6.13.2
-        version: 6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.7)
+        version: 6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.10)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -94,11 +94,11 @@ importers:
         specifier: ^8
         version: 8.4.40
       prisma:
-        specifier: ^5.17.0
-        version: 5.17.0
+        specifier: ^5.18.0
+        version: 5.18.0
       tailwindcss:
-        specifier: ^3.4.7
-        version: 3.4.7
+        specifier: ^3.4.10
+        version: 3.4.10
       typescript:
         specifier: ^5
         version: 5.5.4
@@ -287,8 +287,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@prisma/client@5.17.0':
-    resolution: {integrity: sha512-N2tnyKayT0Zf7mHjwEyE8iG7FwTmXDHFZ1GnNhQp0pJUObsuel4ZZ1XwfuAYkq5mRIiC/Kot0kt0tGCfLJ70Jw==}
+  '@prisma/client@5.18.0':
+    resolution: {integrity: sha512-BWivkLh+af1kqC89zCJYkHsRcyWsM8/JHpsDMM76DjP3ZdEquJhXa4IeX+HkWPnwJ5FanxEJFZZDTWiDs/Kvyw==}
     engines: {node: '>=16.13'}
     peerDependencies:
       prisma: '*'
@@ -296,20 +296,20 @@ packages:
       prisma:
         optional: true
 
-  '@prisma/debug@5.17.0':
-    resolution: {integrity: sha512-l7+AteR3P8FXiYyo496zkuoiJ5r9jLQEdUuxIxNCN1ud8rdbH3GTxm+f+dCyaSv9l9WY+29L9czaVRXz9mULfg==}
+  '@prisma/debug@5.18.0':
+    resolution: {integrity: sha512-f+ZvpTLidSo3LMJxQPVgAxdAjzv5OpzAo/eF8qZqbwvgi2F5cTOI9XCpdRzJYA0iGfajjwjOKKrVq64vkxEfUw==}
 
-  '@prisma/engines-version@5.17.0-31.393aa359c9ad4a4bb28630fb5613f9c281cde053':
-    resolution: {integrity: sha512-tUuxZZysZDcrk5oaNOdrBnnkoTtmNQPkzINFDjz7eG6vcs9AVDmA/F6K5Plsb2aQc/l5M2EnFqn3htng9FA4hg==}
+  '@prisma/engines-version@5.18.0-25.4c784e32044a8a016d99474bd02a3b6123742169':
+    resolution: {integrity: sha512-a/+LpJj8vYU3nmtkg+N3X51ddbt35yYrRe8wqHTJtYQt7l1f8kjIBcCs6sHJvodW/EK5XGvboOiwm47fmNrbgg==}
 
-  '@prisma/engines@5.17.0':
-    resolution: {integrity: sha512-+r+Nf+JP210Jur+/X8SIPLtz+uW9YA4QO5IXA+KcSOBe/shT47bCcRMTYCbOESw3FFYFTwe7vU6KTWHKPiwvtg==}
+  '@prisma/engines@5.18.0':
+    resolution: {integrity: sha512-ofmpGLeJ2q2P0wa/XaEgTnX/IsLnvSp/gZts0zjgLNdBhfuj2lowOOPmDcfKljLQUXMvAek3lw5T01kHmCG8rg==}
 
-  '@prisma/fetch-engine@5.17.0':
-    resolution: {integrity: sha512-ESxiOaHuC488ilLPnrv/tM2KrPhQB5TRris/IeIV4ZvUuKeaicCl4Xj/JCQeG9IlxqOgf1cCg5h5vAzlewN91Q==}
+  '@prisma/fetch-engine@5.18.0':
+    resolution: {integrity: sha512-I/3u0x2n31rGaAuBRx2YK4eB7R/1zCuayo2DGwSpGyrJWsZesrV7QVw7ND0/Suxeo/vLkJ5OwuBqHoCxvTHpOg==}
 
-  '@prisma/get-platform@5.17.0':
-    resolution: {integrity: sha512-UlDgbRozCP1rfJ5Tlkf3Cnftb6srGrEQ4Nm3og+1Se2gWmCZ0hmPIi+tQikGDUVLlvOWx3Gyi9LzgRP+HTXV9w==}
+  '@prisma/get-platform@5.18.0':
+    resolution: {integrity: sha512-Tk+m7+uhqcKDgnMnFN0lRiH7Ewea0OEsZZs9pqXa7i3+7svS3FSCqDBCaM9x5fmhhkufiG0BtunJVDka+46DlA==}
 
   '@radix-ui/primitive@1.1.0':
     resolution: {integrity: sha512-4Z8dn6Upk0qk4P74xBhZ6Hd/w0mPEzOOLxy4xiPXOXqjF7jZS0VAKk7/x/H6FyY2zCkYJqePf1G5KmkmNJ4RBA==}
@@ -679,8 +679,8 @@ packages:
     resolution: {integrity: sha512-Mr2ZakwQ7XUAjp7pAwQWRhhK8mQQ6JAaNWSjmjxil0R8BPioMtQsTLOolGYkji1rcL++3dCqZA3zWqpT+9Ew6g==}
     engines: {node: '>=4'}
 
-  axios@1.7.3:
-    resolution: {integrity: sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==}
+  axios@1.7.4:
+    resolution: {integrity: sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==}
 
   axobject-query@3.1.1:
     resolution: {integrity: sha512-goKlv8DZrK9hUh975fnHzhNIO4jUnFCfv/dszV5VwUGDFjI6vQ2VwoyjYjYNEbBE8AH87TduWP5uyDR1D+Iteg==}
@@ -1397,8 +1397,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-react@0.424.0:
-    resolution: {integrity: sha512-x2Nj2aytk1iOyHqt4hKenfVlySq0rYxNeEf8hE0o+Yh0iE36Rqz0rkngVdv2uQtjZ70LAE73eeplhhptYt9x4Q==}
+  lucide-react@0.428.0:
+    resolution: {integrity: sha512-rGrzslfEcgqwh+TLBC5qJ8wvVIXhLvAIXVFKNHndYyb1utSxxn9rXOC+1CNJLi6yNOooyPqIs6+3YCp6uSiEvg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
@@ -1658,8 +1658,8 @@ packages:
   pretty-format@3.8.0:
     resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
 
-  prisma@5.17.0:
-    resolution: {integrity: sha512-m4UWkN5lBE6yevqeOxEvmepnL5cNPEjzMw2IqDB59AcEV6w7D8vGljDLd1gPFH+W6gUxw9x7/RmN5dCS/WTPxA==}
+  prisma@5.18.0:
+    resolution: {integrity: sha512-+TrSIxZsh64OPOmaSgVPH7ALL9dfU0jceYaMJXsNrTkFHO7/3RANi5K2ZiPB1De9+KDxCWn7jvRq8y8pvk+o9g==}
     engines: {node: '>=16.13'}
     hasBin: true
 
@@ -1902,16 +1902,16 @@ packages:
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
 
-  tailwind-merge@2.4.0:
-    resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
+  tailwind-merge@2.5.2:
+    resolution: {integrity: sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwindcss@3.4.7:
-    resolution: {integrity: sha512-rxWZbe87YJb4OcSopb7up2Ba4U82BoiSGUdoDr3Ydrg9ckxFS/YWsvhN323GMcddgU65QRy7JndC7ahhInhvlQ==}
+  tailwindcss@3.4.10:
+    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2099,10 +2099,10 @@ snapshots:
       preact: 10.11.3
       preact-render-to-string: 5.2.3(preact@10.11.3)
 
-  '@auth/prisma-adapter@2.4.2(@prisma/client@5.17.0(prisma@5.17.0))':
+  '@auth/prisma-adapter@2.4.2(@prisma/client@5.18.0(prisma@5.18.0))':
     dependencies:
       '@auth/core': 0.34.2
-      '@prisma/client': 5.17.0(prisma@5.17.0)
+      '@prisma/client': 5.18.0(prisma@5.18.0)
     transitivePeerDependencies:
       - '@simplewebauthn/browser'
       - '@simplewebauthn/server'
@@ -2249,30 +2249,30 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@prisma/client@5.17.0(prisma@5.17.0)':
+  '@prisma/client@5.18.0(prisma@5.18.0)':
     optionalDependencies:
-      prisma: 5.17.0
+      prisma: 5.18.0
 
-  '@prisma/debug@5.17.0': {}
+  '@prisma/debug@5.18.0': {}
 
-  '@prisma/engines-version@5.17.0-31.393aa359c9ad4a4bb28630fb5613f9c281cde053': {}
+  '@prisma/engines-version@5.18.0-25.4c784e32044a8a016d99474bd02a3b6123742169': {}
 
-  '@prisma/engines@5.17.0':
+  '@prisma/engines@5.18.0':
     dependencies:
-      '@prisma/debug': 5.17.0
-      '@prisma/engines-version': 5.17.0-31.393aa359c9ad4a4bb28630fb5613f9c281cde053
-      '@prisma/fetch-engine': 5.17.0
-      '@prisma/get-platform': 5.17.0
+      '@prisma/debug': 5.18.0
+      '@prisma/engines-version': 5.18.0-25.4c784e32044a8a016d99474bd02a3b6123742169
+      '@prisma/fetch-engine': 5.18.0
+      '@prisma/get-platform': 5.18.0
 
-  '@prisma/fetch-engine@5.17.0':
+  '@prisma/fetch-engine@5.18.0':
     dependencies:
-      '@prisma/debug': 5.17.0
-      '@prisma/engines-version': 5.17.0-31.393aa359c9ad4a4bb28630fb5613f9c281cde053
-      '@prisma/get-platform': 5.17.0
+      '@prisma/debug': 5.18.0
+      '@prisma/engines-version': 5.18.0-25.4c784e32044a8a016d99474bd02a3b6123742169
+      '@prisma/get-platform': 5.18.0
 
-  '@prisma/get-platform@5.17.0':
+  '@prisma/get-platform@5.18.0':
     dependencies:
-      '@prisma/debug': 5.17.0
+      '@prisma/debug': 5.18.0
 
   '@radix-ui/primitive@1.1.0': {}
 
@@ -2496,14 +2496,14 @@ snapshots:
 
   '@uploadthing/mime-types@0.2.10': {}
 
-  '@uploadthing/react@6.7.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.7))':
+  '@uploadthing/react@6.7.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.10))':
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
       '@uploadthing/shared': 6.7.8
       file-selector: 0.6.0
       react: 18.3.1
-      tailwind-merge: 2.4.0
-      uploadthing: 6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.7)
+      tailwind-merge: 2.5.2
+      uploadthing: 6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.10)
     optionalDependencies:
       next: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
@@ -2636,7 +2636,7 @@ snapshots:
 
   axe-core@4.10.0: {}
 
-  axios@1.7.3:
+  axios@1.7.4:
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -3528,7 +3528,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-react@0.424.0(react@18.3.1):
+  lucide-react@0.428.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
@@ -3761,9 +3761,9 @@ snapshots:
 
   pretty-format@3.8.0: {}
 
-  prisma@5.17.0:
+  prisma@5.18.0:
     dependencies:
-      '@prisma/engines': 5.17.0
+      '@prisma/engines': 5.18.0
 
   prop-types@15.8.1:
     dependencies:
@@ -4029,13 +4029,13 @@ snapshots:
       react: 18.3.1
       use-sync-external-store: 1.2.2(react@18.3.1)
 
-  tailwind-merge@2.4.0: {}
+  tailwind-merge@2.5.2: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.7):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.10):
     dependencies:
-      tailwindcss: 3.4.7
+      tailwindcss: 3.4.10
 
-  tailwindcss@3.4.7:
+  tailwindcss@3.4.10:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -4142,7 +4142,7 @@ snapshots:
 
   undici-types@6.13.0: {}
 
-  uploadthing@6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.7):
+  uploadthing@6.13.2(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.10):
     dependencies:
       '@effect/schema': 0.68.12(effect@3.4.5)
       '@uploadthing/mime-types': 0.2.10
@@ -4152,7 +4152,7 @@ snapshots:
       std-env: 3.7.0
     optionalDependencies:
       next: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      tailwindcss: 3.4.7
+      tailwindcss: 3.4.10
 
   uri-js@4.4.1:
     dependencies:
