@@ -12,6 +12,8 @@
 
 PortfolioCreator is a website that allows you to create a portfolio for your projects, it's simple and easy to use.
 
+https://github.com/user-attachments/assets/cccbc544-4df7-44c0-bcc0-932ea1c592af
+
 ## Deploying
 
 You'll have to set the following environment variables to setup the dashboard, here is a list of them:
